@@ -2,8 +2,6 @@ package com.nelioalves.cursomc;
 
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -93,7 +91,7 @@ public class CursomcApplication implements CommandLineRunner {
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 		
-		Pedido ped1 = new Pedido(null,sdf.parse("30/09/2017 10:32"),cli1,e1);
+		Pedido ped1 = new Pedido(null,sdf.parse("30/09/2017 10:32"),cli1, e1);
 		Pedido ped2 = new Pedido(null,sdf.parse("10/10/2017 19:35"), cli1, e2);
 		
 		Pagamento pagto1 = new PagamentoComCartao(null, EstadoPagamento.QUITADO, ped1, 6);
@@ -107,7 +105,7 @@ public class CursomcApplication implements CommandLineRunner {
 		ItemPedido ip3 = new ItemPedido(ped2, p2, 100.00, 1, 800.00);
 		
 		ped1.getItens().addAll(Arrays.asList(ip1,ip2));
-		ped1.getItens().addAll(Arrays.asList(ip3));
+		ped2.getItens().addAll(Arrays.asList(ip3));
 		
 		p1.getItens().addAll(Arrays.asList(ip1));
 		p2.getItens().addAll(Arrays.asList(ip3));
