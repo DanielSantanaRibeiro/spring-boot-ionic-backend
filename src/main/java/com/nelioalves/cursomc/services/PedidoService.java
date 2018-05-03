@@ -76,7 +76,8 @@ public class PedidoService {
 		obj.getId();
 		
 		//System.out.println(obj);
-		emailService.sendOrderConfirmartionEmail(obj);
+		//emailService.sendOrderConfirmartionEmail(obj);
+		emailService.sendOrderConfirmationHtmlEmail(obj);
 		return obj;
 	}
 
